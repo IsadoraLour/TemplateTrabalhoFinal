@@ -1,11 +1,16 @@
-﻿using System.Data.SQLite;
+﻿using System.Configuration;
+using System.Data.SQLite;
 using TrabalhoFinal._03_Entidades;
 
 namespace TrabalhoFinal._02_Repository;
 
 public class PessoaRepository
 {
-    private const string ConnectionString = "Data Source=Rotina.db";
+    private readonly string ConnectionString;
+    public PessoaRepository(string connectionString)
+    {
+        ConnectionString = connectionString;
+    }
     public List<Pessoa> Listar()
     {
         List<Pessoa> lista = new List<Pessoa>();

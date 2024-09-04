@@ -1,4 +1,5 @@
-﻿using TrabalhoFinal._02_Repository;
+﻿using System.Configuration.Internal;
+using TrabalhoFinal._02_Repository;
 using TrabalhoFinal._03_Entidades;
 
 namespace TrabalhoFinal._01_Services;
@@ -6,9 +7,9 @@ namespace TrabalhoFinal._01_Services;
 public class PessoaService
 {
     public PessoaRepository repository { get; set; }
-    public PessoaService()
+    public PessoaService(string connectionString)
     {
-        repository = new PessoaRepository();
+        repository = new PessoaRepository(connectionString);
     }
     public void Adicionar(Pessoa pessoa)
     {

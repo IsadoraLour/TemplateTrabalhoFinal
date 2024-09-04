@@ -9,9 +9,10 @@ namespace API.Controllers;
 public class PessoaController : ControllerBase
 {
     private readonly PessoaService _service;
-    public PessoaController()
+    public PessoaController(IConfiguration config)
     {
-        _service = new PessoaService();
+        string connectionString = config.GetConnectionString("DefaultConnection");
+        _service = new PessoaService(connectionString);
     }
     [HttpPost("adicionar-pessoa")]
     public void AdicionarAluno(Pessoa pessoa)
