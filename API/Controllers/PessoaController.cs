@@ -15,7 +15,7 @@ public class PessoaController : ControllerBase
         _service = new PessoaService(connectionString);
     }
     [HttpPost("adicionar-pessoa")]
-    public void AdicionarAluno(Pessoa pessoa)
+    public void AdicionarPessoa(Pessoa pessoa)
     {
         _service.Adicionar(pessoa);
     }
