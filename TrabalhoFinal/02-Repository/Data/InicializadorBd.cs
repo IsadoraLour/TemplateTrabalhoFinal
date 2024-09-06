@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Dapper;
+using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
 using System.Linq;
@@ -9,12 +10,9 @@ namespace TrabalhoFinal._02_Repository.Data
 {
     public static class InicializadorBd
     {
-        private const string ConnectionString = "Data Source=Rotina.db";
-
         public static void Inicializar()
         {
-            using (var connection = new SQLiteConnection(ConnectionString))
-            {
+            using var connection = new SQLiteConnection("Data Source=Rotina.db");
                 connection.Open();
                 string commandoSQL = @"   
                  CREATE TABLE IF NOT EXISTS Pessoas(
@@ -29,11 +27,8 @@ namespace TrabalhoFinal._02_Repository.Data
                  Nome TEXT NOT NULL,
                  Prioridade INTEGER NOT NULL
                 );";
-                using (var command = new SQLiteCommand(commandoSQL, connection))
-                {
-                    command.ExecuteNonQuery();
-                }
-            }
+
+            connection.Execute(commandoSQL);
         }
     }
 }
