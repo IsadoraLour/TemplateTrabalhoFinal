@@ -1,10 +1,12 @@
 ﻿using Core.Entidades;
+using Dapper;
 using Dapper.Contrib.Extensions;
 using System.Data.SQLite;
+using TrabalhoFinal._02_Repository.Interfaces;
 
 namespace TrabalhoFinal._02_Repository;
 
-public class UsuarioRepository
+public class UsuarioRepository : IUsuarioRepository
 {
     private readonly string ConnectionString;
 
@@ -32,7 +34,7 @@ public class UsuarioRepository
     public void Editar(Usuario usuario)
     {
         using var connection = new SQLiteConnection(ConnectionString);
-        connection.Update(usuario);
+        connection.Update<Usuario>(usuario);
     }
 
     public List<Usuario> Listar()
@@ -53,5 +55,10 @@ public class UsuarioRepository
         return connection.QuerySingleOrDefault<Usuario>(
             "SELECT * FROM Usuarios WHERE Username = @Username",
             new { Username = username });
+    }
+
+    internal object BuscarPorUsername(object username)
+    {
+        throw new NotImplementedException();
     }
 }

@@ -1,9 +1,10 @@
 ﻿using Core._03_Entidades;
+using TrabalhoFinal._01_Services.Interfaces;
 using TrabalhoFinal._02_Repository;
 
 namespace TrabalhoFinal._01_Services;
 
-public class VendaService
+public class VendaService : IVendaServices
 {
     public VendaRepository repository { get; set; }
 
@@ -26,7 +27,7 @@ public class VendaService
         return repository.Listar();
     }
 
-    public ReadVendaReciboDTO BuscarVendaPorId(int id)
+    public Venda BuscarVendaPorId(int id)
     {
         return repository.BuscarPorId(id);
     }
@@ -43,7 +44,13 @@ public class VendaService
 
     public decimal CalcularTotalVenda(int vendaId)
     {
-        var venda = repository.BuscarPorId(vendaId);
-        return venda.Itens.Sum(item => item.Preco * item.Quantidade);
+        //var venda = repository.BuscarPorId(vendaId);
+        //return venda.Itens.Sum(item => item.Preco * item.Quantidade);
+        return 0;
+    }
+
+    public Venda BuscarPorId(int id)
+    {
+        throw new NotImplementedException();
     }
 }

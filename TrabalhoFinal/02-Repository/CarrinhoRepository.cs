@@ -1,9 +1,14 @@
-﻿using System.Data.SQLite;
+﻿using Core.Entidades;
+using Dapper;
+using Dapper.Contrib.Extensions;
+using System.Data.SQLite;
+using TrabalhoFinal._02_Repository.Interfaces;
 using TrabalhoFinal._03_Entidades;
+using TrabalhoFinal._03_Entidades.DTO;
 
 namespace TrabalhoFinal._02_Repository
 {
-    public class CarrinhoRepository
+    public class CarrinhoRepository : ICarrinhoRepository
     {
         private readonly string ConnectionString;
         private readonly ProdutoRepository _repositoryProduto;
@@ -46,11 +51,16 @@ namespace TrabalhoFinal._02_Repository
         }
 
         // Listar carrinhos de um usuário específico
-        public List<ReadCarrinhoDTO> ListarCarrinhoDoUsuario(int usuarioId)
+        public List<ReadVendaReciboDTO> ListarCarrinhoDoUsuario(int usuarioId)
         {
             using var connection = new SQLiteConnection(ConnectionString);
             List<Carrinho> list = connection.Query<Carrinho>($"SELECT * FROM Carrinhos WHERE UsuarioId = {usuarioId}").ToList();
             return TransformarListaCarrinhoEmCarrinhoDTO(list);
+        }
+
+        private List<ReadVendaReciboDTO> TransformarListaCarrinhoEmCarrinhoDTO(List<Carrinho> list)
+        {
+            throw new NotImplementedException();
         }
 
         // Buscar carrinho por id
@@ -59,24 +69,8 @@ namespace TrabalhoFinal._02_Repository
             using var connection = new SQLiteConnection(ConnectionString);
             return connection.Get<Carrinho>(id);
         }
-
-        // Transformar lista de Carrinho para DTO
-        private List<ReadCarrinhoDTO> TransformarListaCarrinhoEmCarrinhoDTO(List<Carrinho> list)
-        {
-            List<ReadCarrinhoDTO> listDTO = new List<ReadCarrinhoDTO>();
-
-            foreach (var car in list)
-            {
-                ReadCarrinhoDTO readCarrinho = new ReadCarrinhoDTO
-                {
-                    Produto = _repositoryProduto.BuscarPorId(car.ProdutoId),
-                    Usuario = _repositoryUsuario.BuscarPorId(car.UsuarioId)
-                };
-                listDTO.Add(readCarrinho);
-            }
-            return listDTO
-
-
+    }
+}
 
 
 

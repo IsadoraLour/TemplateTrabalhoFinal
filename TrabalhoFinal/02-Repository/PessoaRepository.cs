@@ -1,11 +1,12 @@
 ﻿using Dapper.Contrib.Extensions;
 using System.Configuration;
 using System.Data.SQLite;
+using TrabalhoFinal._02_Repository.Interfaces;
 using TrabalhoFinal._03_Entidades;
 
 namespace TrabalhoFinal._02_Repository;
 
-public class PessoaRepository
+public class PessoaRepository : IPessoaRepository
 {
     private readonly string ConnectionString;
     public PessoaRepository(string connectionString)

@@ -1,9 +1,11 @@
 ﻿using Core.Entidades;
+using TrabalhoFinal._01_Services.Interfaces;
 using TrabalhoFinal._02_Repository;
+using TrabalhoFinal._03_Entidades.DTO;
 
 namespace TrabalhoFinal._01_Services;
 
-public class CarrinhoService
+public class CarrinhoService : ICarrinhoServices
 {
     public CarrinhoRepository repository { get; set; }
     public CarrinhoService(string _config)
@@ -25,7 +27,7 @@ public class CarrinhoService
         return repository.Listar();
     }
 
-    public List<ReadCarrinhoDTO> ListarCarrinhoDoUsuario(int usuarioId)
+    public List<ReadVendaReciboDTO> ListarCarrinhoDoUsuario(int usuarioId)
     {
         return repository.ListarCarrinhoDoUsuario(usuarioId);
     }

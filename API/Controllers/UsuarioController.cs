@@ -1,4 +1,5 @@
-﻿using Core.Entidades;
+﻿using AutoMapper;
+using Core.Entidades;
 using Microsoft.AspNetCore.Mvc;
 using TrabalhoFinal._01_Services;
 
@@ -26,9 +27,9 @@ namespace API.Controllers
         }
 
         [HttpPost("fazer-login")]
-        public ActionResult<Usuario> FazerLogin(UsuarioLoginDTO usuarioLogin)
+        public ActionResult<Usuario> FazerLogin(Usuario usuarioLogin)
         {
-            Usuario usuario = _service.FazerLogin(usuarioLogin);
+            Usuario usuario = _service.FazerLogin(null);
             if (usuario == null)
             {
                 return Unauthorized();

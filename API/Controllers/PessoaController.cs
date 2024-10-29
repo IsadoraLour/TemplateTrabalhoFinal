@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using TrabalhoFinal._01_Services;
+using TrabalhoFinal._01_Services.Interfaces;
 using TrabalhoFinal._03_Entidades;
 
 namespace API.Controllers;
@@ -8,7 +9,7 @@ namespace API.Controllers;
 [Route("[controller]")]
 public class PessoaController : ControllerBase
 {
-    private readonly PessoaService _service;
+    private readonly IPessoasServices _service;
     public PessoaController(IConfiguration config)
     {
         string connectionString = config.GetConnectionString("DefaultConnection");

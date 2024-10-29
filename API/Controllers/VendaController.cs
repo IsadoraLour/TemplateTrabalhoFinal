@@ -1,6 +1,8 @@
-﻿using Core._03_Entidades;
+﻿using AutoMapper;
+using Core._03_Entidades;
 using Microsoft.AspNetCore.Mvc;
 using TrabalhoFinal._01_Services;
+using TrabalhoFinal._01_Services.Interfaces;
 
 namespace API.Controllers
 {
@@ -8,7 +10,7 @@ namespace API.Controllers
     [Route("[controller]")]
     public class VendaController : ControllerBase
     {
-        private readonly VendaService _service;
+        private readonly IVendaServices _service;
         private readonly IMapper _mapper;
 
         public VendaController(IConfiguration config, IMapper mapper)
@@ -34,9 +36,9 @@ namespace API.Controllers
         }
 
         [HttpGet("buscar-por-id/{id}")]
-        public ActionResult<ReadVendaReciboDTO> BuscarVendaPorId(int id)
+        public ActionResult<Venda> BuscarVendaPorId(int id)
         {
-            var vendaDTO = _service.BuscarVendaPorId(id);
+            var vendaDTO = _service.BuscarPorId(id);
             if (vendaDTO == null)
             {
                 return NotFound();

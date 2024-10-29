@@ -1,10 +1,12 @@
 ﻿using Core._03_Entidades;
 using Dapper.Contrib.Extensions;
 using System.Data.SQLite;
+using TrabalhoFinal._02_Repository.Interfaces;
+using TrabalhoFinal._03_Entidades;
 
 namespace TrabalhoFinal._02_Repository
 {
-    public class VendaRepository
+    public class VendaRepository : IVendaRepository 
     {
         private readonly string ConnectionString;
         private readonly CarrinhoRepository _repositoryCarrinho;
@@ -38,7 +40,7 @@ namespace TrabalhoFinal._02_Repository
         public void Editar(Venda venda)
         {
             using var connection = new SQLiteConnection(ConnectionString);
-            connection.Update(venda);
+            connection.Update<Venda>(venda);
         }
 
         public List<Venda> Listar()
@@ -47,22 +49,16 @@ namespace TrabalhoFinal._02_Repository
             return connection.GetAll<Venda>().ToList();
         }
 
-        public ReadVendaReciboDTO BuscarPorId(int id)
+        public Venda BuscarPorId(int id)
         {
             using var connection = new SQLiteConnection(ConnectionString);
-            var venda = connection.Get<Venda>(id);
-            if (venda == null) return null;
+            Venda venda = connection.Get<Venda>(id);
+            return venda;
+        }
 
-            var vendaDTO = new ReadVendaReciboDTO
-            {
-                Endereco = _repositoryEndereco.BuscarPorId(venda.EnderecoId),
-                NomeUsuario = _repositoryUsuario.BuscarPorId(venda.UsuarioId)?.Nome,
-                MetodoPagamento = venda.MetodoPagamento,
-                Produtos = _repositoryCarrinho.ListarCarrinhoDoUsuario(venda.UsuarioId),
-                ValorFinal = venda.ValorFinal
-            };
-
-            return vendaDTO;
+        internal List<Venda> ListarVendasPorCliente(int clienteId)
+        {
+            throw new NotImplementedException();
         }
     }
 }

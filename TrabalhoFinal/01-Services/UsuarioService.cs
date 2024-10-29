@@ -1,10 +1,11 @@
-﻿using Core._03_Entidades.DTO.Usuarios;
-using Core.Entidades;
+﻿using Core.Entidades;
+using TrabalhoFinal._01_Services.Interfaces;
 using TrabalhoFinal._02_Repository;
+using TrabalhoFinal._03_Entidades.DTO;
 
 namespace TrabalhoFinal._01_Services;
 
-public class UsuarioService
+public class UsuarioService : IUsuarioServices
 {
     public UsuarioRepository repository { get; set; }
 
@@ -38,7 +39,7 @@ public class UsuarioService
         repository.Editar(usuarioEditado);
     }
 
-    public Usuario FazerLogin(UsuarioLoginDTO usuarioLogin)
+    public Usuario FazerLogin(Usuario usuarioLogin)
     {
         var usuario = repository.BuscarPorUsername(usuarioLogin.Username);
         if (usuario != null && usuario.Senha == usuarioLogin.Senha)

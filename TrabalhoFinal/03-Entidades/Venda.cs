@@ -12,7 +12,8 @@ public class Venda
     public int EnderecoId { get; set; }
     public string MetodoPagamento { get; set; }
     public double ValorFinal { get; set; }
-}
+        public object Itens { get; internal set; }
+    }
 
 }
 
