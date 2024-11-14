@@ -12,7 +12,7 @@ namespace TrabalhoFinal._02_Repository.Data
     {
         public static void Inicializar()
         {
-            using var connection = new SQLiteConnection("Data Source=Rotina.db");
+            using var connection = new SQLiteConnection("Data Source=mercado.db");
                 connection.Open();
                 string commandoSQL = @"   
                  CREATE TABLE IF NOT EXISTS Pessoas(

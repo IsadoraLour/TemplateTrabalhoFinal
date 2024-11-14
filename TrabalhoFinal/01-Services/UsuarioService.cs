@@ -39,13 +39,5 @@ public class UsuarioService : IUsuarioServices
         repository.Editar(usuarioEditado);
     }
 
-    public Usuario FazerLogin(Usuario usuarioLogin)
-    {
-        var usuario = repository.BuscarPorUsername(usuarioLogin.Username);
-        if (usuario != null && usuario.Senha == usuarioLogin.Senha)
-        {
-            return usuario;
-        }
-        return null;
-    }
+   
 }

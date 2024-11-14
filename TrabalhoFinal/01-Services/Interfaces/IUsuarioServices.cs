@@ -14,6 +14,6 @@ namespace TrabalhoFinal._01_Services.Interfaces
         void Editar(Usuario usuario);
         List<Usuario> Listar();
         Usuario BuscarPorId(int id);
-        public Usuario FazerLogin(Usuario usuarioLogin);
+       
     }
 }

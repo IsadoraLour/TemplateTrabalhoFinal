@@ -26,16 +26,6 @@ namespace API.Controllers
             return CreatedAtAction(nameof(ListarUsuarios), new { id = usuarioDTO.Id }, usuarioDTO);
         }
 
-        [HttpPost("fazer-login")]
-        public ActionResult<Usuario> FazerLogin(Usuario usuarioLogin)
-        {
-            Usuario usuario = _service.FazerLogin(null);
-            if (usuario == null)
-            {
-                return Unauthorized();
-            }
-            return Ok(usuario);
-        }
 
         [HttpGet("listar-usuarios")]
         public ActionResult<List<Usuario>> ListarUsuarios()

@@ -7,12 +7,12 @@ using TrabalhoFinal._03_Entidades;
 
 namespace TrabalhoFinal._02_Repository.Interfaces
 {
-    public interface IPessoaRepository
+    public interface IFuncionarioRepository
     {
-        List<Pessoa> Listar();
-        Pessoa BuscarPorId(int id);
+        void Adicionar(Funcionario funcionario);
         void Remover(int id);
-        void Editar(Pessoa p);
-        void Adicionar(Pessoa pessoa);
+        void Editar(Funcionario funcionario);
+        List<Funcionario> Listar();
+        Funcionario BuscarPorId(int id);
     }
 }

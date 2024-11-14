@@ -14,7 +14,7 @@ namespace TrabalhoFinal._02_Repository.Interfaces
         void Editar(Usuario usuario);
         List<Usuario> Listar();
         Usuario BuscarPorId(int id);
-        Usuario BuscarPorUsername(string username);
+       
 
     }
 }

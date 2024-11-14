@@ -48,17 +48,6 @@ public class UsuarioRepository : IUsuarioRepository
         using var connection = new SQLiteConnection(ConnectionString);
         return connection.Get<Usuario>(id);
     }
-
-    public Usuario BuscarPorUsername(string username)
-    {
-        using var connection = new SQLiteConnection(ConnectionString);
-        return connection.QuerySingleOrDefault<Usuario>(
-            "SELECT * FROM Usuarios WHERE Username = @Username",
-            new { Username = username });
-    }
-
-    internal object BuscarPorUsername(object username)
-    {
-        throw new NotImplementedException();
-    }
 }
+
+ 

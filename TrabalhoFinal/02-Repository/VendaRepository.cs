@@ -11,14 +11,17 @@ namespace TrabalhoFinal._02_Repository
         private readonly string ConnectionString;
         private readonly CarrinhoRepository _repositoryCarrinho;
         private readonly UsuarioRepository _repositoryUsuario;
-       
+        private readonly FuncionarioRepository _repositoryFuncionario;
+
 
         public VendaRepository(string connectionString)
         {
             ConnectionString = connectionString;
             _repositoryCarrinho = new CarrinhoRepository(connectionString);
             _repositoryUsuario = new UsuarioRepository(connectionString);
-            
+            _repositoryFuncionario = new FuncionarioRepository(connectionString);
+
+
         }
 
         public void Adicionar(Venda venda)

@@ -7,13 +7,13 @@ using TrabalhoFinal._03_Entidades;
 
 namespace TrabalhoFinal._01_Services.Interfaces
 {
-    public interface IPessoasServices
+    public interface IFuncionarioService
     {
-        void Editar(int id, Pessoa editPessoa);
-        void Adicionar(Pessoa pessoa);
-        List<Pessoa> Listar();
-        void BuscarTimePorId(int id);
+        void Adicionar(Funcionario funcionario);
         void Remover(int id);
+        List<Funcionario> Listar();
+        Funcionario BuscarPorId(int id);
+        void Editar(Funcionario funcionarioEditado);
 
     }
 }
