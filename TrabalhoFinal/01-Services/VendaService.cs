@@ -1,5 +1,4 @@
-﻿using Core._03_Entidades;
-using TrabalhoFinal._01_Services.Interfaces;
+﻿using TrabalhoFinal._01_Services.Interfaces;
 using TrabalhoFinal._02_Repository;
 
 namespace TrabalhoFinal._01_Services;

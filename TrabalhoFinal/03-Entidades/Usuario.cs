@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Core.Entidades
+﻿namespace TrabalhoFinal
 {
     public class Usuario
     {
@@ -9,6 +7,7 @@ namespace Core.Entidades
         public string Username { get; set; }
         public string Senha { get; set; }
         public string Email { get; set; }
+
+ 
     }
-        
 }

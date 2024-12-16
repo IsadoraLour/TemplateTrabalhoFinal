@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
-using Core.Entidades;
+using Core._03_Entidades.DTO.Venda;
 using Microsoft.AspNetCore.Mvc;
+using TrabalhoFinal;
 using TrabalhoFinal._01_Services;
 using TrabalhoFinal._01_Services.Interfaces;
-using TrabalhoFinal._03_Entidades.DTO;
 
 namespace API.Controllers;
 

@@ -1,9 +1,4 @@
-﻿using Core.Entidades;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Core._03_Entidades.DTO.Venda;
 
 namespace TrabalhoFinal._02_Repository.Interfaces
 {
@@ -15,6 +10,6 @@ namespace TrabalhoFinal._02_Repository.Interfaces
         void Editar(Carrinho carrinho);
         List<Carrinho> Listar();
         Carrinho BuscarPorId(int id);
-
+        List<ReadVendaReciboDTO> ListarCarrinhoDoUsuario(int usuarioId);
     }
 }

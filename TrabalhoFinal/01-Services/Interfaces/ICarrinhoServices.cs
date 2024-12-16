@@ -1,10 +1,4 @@
-﻿using Core.Entidades;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TrabalhoFinal._03_Entidades.DTO;
+﻿using Core._03_Entidades.DTO.Venda;
 
 namespace TrabalhoFinal._01_Services.Interfaces
 {

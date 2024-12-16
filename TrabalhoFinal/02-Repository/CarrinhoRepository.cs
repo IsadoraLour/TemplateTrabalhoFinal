@@ -1,10 +1,8 @@
-﻿using Core.Entidades;
+﻿using Core._03_Entidades.DTO.Venda;
 using Dapper;
 using Dapper.Contrib.Extensions;
 using System.Data.SQLite;
 using TrabalhoFinal._02_Repository.Interfaces;
-using TrabalhoFinal._03_Entidades;
-using TrabalhoFinal._03_Entidades.DTO;
 
 namespace TrabalhoFinal._02_Repository
 {
@@ -21,14 +19,12 @@ namespace TrabalhoFinal._02_Repository
             _repositoryUsuario = new UsuarioRepository(connectionString);
         }
 
-        // Adicionar novo carrinho
         public void Adicionar(Carrinho carrinho)
         {
             using var connection = new SQLiteConnection(ConnectionString);
             connection.Insert<Carrinho>(carrinho);
         }
 
-        // Remover carrinho por id
         public void Remover(int id)
         {
             using var connection = new SQLiteConnection(ConnectionString);
@@ -36,21 +32,18 @@ namespace TrabalhoFinal._02_Repository
             connection.Delete<Carrinho>(carrinho);
         }
 
-        // Editar carrinho existente
         public void Editar(Carrinho carrinho)
         {
             using var connection = new SQLiteConnection(ConnectionString);
             connection.Update<Carrinho>(carrinho);
         }
 
-        // Listar todos os carrinhos
         public List<Carrinho> Listar()
         {
             using var connection = new SQLiteConnection(ConnectionString);
             return connection.GetAll<Carrinho>().ToList();
         }
 
-        // Listar carrinhos de um usuário específico
         public List<ReadVendaReciboDTO> ListarCarrinhoDoUsuario(int usuarioId)
         {
             using var connection = new SQLiteConnection(ConnectionString);
@@ -63,7 +56,6 @@ namespace TrabalhoFinal._02_Repository
             throw new NotImplementedException();
         }
 
-        // Buscar carrinho por id
         public Carrinho BuscarPorId(int id)
         {
             using var connection = new SQLiteConnection(ConnectionString);

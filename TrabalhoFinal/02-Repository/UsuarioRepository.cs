@@ -1,6 +1,4 @@
-﻿using Core.Entidades;
-using Dapper;
-using Dapper.Contrib.Extensions;
+﻿using Dapper.Contrib.Extensions;
 using System.Data.SQLite;
 using TrabalhoFinal._02_Repository.Interfaces;
 

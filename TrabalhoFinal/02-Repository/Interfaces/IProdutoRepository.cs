@@ -1,8 +1,4 @@
-﻿
-using TrabalhoFinal._03_Entidades;
-
-
-namespace TrabalhoFinal._02_Repository.Interfaces
+﻿namespace TrabalhoFinal._02_Repository.Interfaces
 {
     public interface IProdutoRepository
     {

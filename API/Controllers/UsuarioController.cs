@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using Core.Entidades;
 using Microsoft.AspNetCore.Mvc;
+using TrabalhoFinal;
 using TrabalhoFinal._01_Services;
 
 namespace API.Controllers

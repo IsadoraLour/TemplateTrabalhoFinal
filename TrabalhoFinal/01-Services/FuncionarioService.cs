@@ -1,11 +1,5 @@
-﻿using Core.Entidades;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 using TrabalhoFinal._02_Repository;
-using TrabalhoFinal._03_Entidades;
 
 namespace TrabalhoFinal._01_Services
 {

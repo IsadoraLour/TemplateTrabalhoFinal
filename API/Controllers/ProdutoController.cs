@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using TrabalhoFinal;
 using TrabalhoFinal._01_Services;
-using TrabalhoFinal._03_Entidades;
 
 namespace API.Controllers
 {

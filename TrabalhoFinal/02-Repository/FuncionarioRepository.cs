@@ -1,7 +1,6 @@
 ﻿using Dapper.Contrib.Extensions;
 using System.Data.SQLite;
 using TrabalhoFinal._02_Repository.Interfaces;
-using TrabalhoFinal._03_Entidades;
 
 namespace TrabalhoFinal._02_Repository
 {

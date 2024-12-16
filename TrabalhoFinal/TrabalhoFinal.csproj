@@ -7,6 +7,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="03-Entidades\NovaPasta1\**" />
+    <Compile Remove="03-Entidades\NovaPasta\**" />
+    <EmbeddedResource Remove="03-Entidades\NovaPasta1\**" />
+    <EmbeddedResource Remove="03-Entidades\NovaPasta\**" />
+    <None Remove="03-Entidades\NovaPasta1\**" />
+    <None Remove="03-Entidades\NovaPasta\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="03-Entidades\htdtgh.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Dapper" Version="2.1.35" />
     <PackageReference Include="Dapper.Contrib" Version="2.0.78" />
     <PackageReference Include="System.Data.SQLite" Version="1.0.118" />

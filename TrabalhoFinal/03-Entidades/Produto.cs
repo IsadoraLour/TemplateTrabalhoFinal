@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TrabalhoFinal._03_Entidades
+﻿namespace TrabalhoFinal
 {
     public class Produto
     {
@@ -12,8 +6,6 @@ namespace TrabalhoFinal._03_Entidades
         public string Nome { get; set; }
         public string Descricao { get; set; }
         public decimal Preco { get; set; }
-        public int QuantidadeEmEstoque { get; set; }
-
-
+        public int Estoque { get; set; }
     }
 }
